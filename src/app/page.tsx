@@ -188,9 +188,9 @@ export default async function Home() {
             <span className="text-primary text-balance">Arthur BRUNOT</span><br/> créateur de solutions digitale.
           </h1>
           <p className="mt-6 text-xl text-neutral-600">
-            Au carrefour de l'innovation et du numérique, je façonne les territoires digitaux de demain.
+            Au carrefour de l&apos;innovation et du numérique, je façonne les territoires digitaux de demain.
             Ma mission ? Transformer vos visions en réalités éclatantes par la magie du digital.
-            Laissez-moi vous guider vers l'excellence.
+            Laissez-moi vous guider vers l&apos;excellence.
           </p>
         </FadeIn>
       </Container>
