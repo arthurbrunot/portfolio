@@ -34,7 +34,7 @@ const clients = [
 
 function Clients() {
   return (
-    <div className="mt-24 rounded-4xl bg-neutral-950 py-20 sm:mt-32 sm:py-32 lg:mt-56 mx-6">
+    <div className="mt-24 rounded-4xl bg-neutral-950 py-20 sm:mt-32 sm:py-32 lg:mt-56">
       <Container>
         <FadeIn className="flex items-center gap-x-8">
           <h2 className="text-center font-display text-sm font-semibold tracking-wider text-white sm:text-left">
@@ -185,7 +185,7 @@ export default async function Home() {
       <Container className="mt-24 sm:mt-32 md:mt-56">
         <FadeIn className="max-w-3xl">
           <h1 className="font-display text-5xl font-medium tracking-tight text-neutral-950 sm:text-7xl text-pretty">
-            <span className="text-primary text-balance">Arthur BRUNOT</span><br/> créateur de solutions digitale.
+            <span className="text-primary text-balance font-semibold">Arthur BRUNOT</span><br/> créateur de solutions digitale.
           </h1>
           <p className="mt-6 text-xl text-neutral-600">
             Au carrefour de l&apos;innovation et du numérique, je façonne les territoires digitaux de demain.

@@ -143,11 +143,11 @@ function Navigation() {
   return (
     <nav className="mt-px font-display text-5xl font-medium tracking-tight text-white">
       <NavigationRow>
-        <NavigationItem href="/work">Our Work</NavigationItem>
-        <NavigationItem href="/about">About Us</NavigationItem>
+        <NavigationItem href="/work">Mes projets</NavigationItem>
+        <NavigationItem href="/about">Mon histoire</NavigationItem>
       </NavigationRow>
       <NavigationRow>
-        <NavigationItem href="/process">Our Process</NavigationItem>
+        <NavigationItem href="/process">Processus</NavigationItem>
         <NavigationItem href="/blog">Blog</NavigationItem>
       </NavigationRow>
     </nav>
