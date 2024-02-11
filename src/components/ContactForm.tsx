@@ -5,7 +5,7 @@ import {UseFormRegister} from "react-hook-form";
 import TextInput from "@/components/Inputs/TextInput";
 import RadioInput from "@/components/Inputs/RadioInput";
 
-export function ContactForm({title,register, isLoading, ...props} : React.ComponentPropsWithoutRef<'form'> & {title?: string, register: UseFormRegister<any>, isLoading: boolean}) {
+export function ContactForm({title,register, isLoading, ...props} : React.ComponentPropsWithoutRef<'form'> & {title?: string, register: UseFormRegister<any>, isLoading?: boolean}) {
   return (
     <FadeIn className={clsx("lg:order-last", props.className)}>
       <form {...props}>
