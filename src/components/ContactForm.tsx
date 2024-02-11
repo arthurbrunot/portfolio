@@ -5,7 +5,7 @@ import {UseFormRegister} from "react-hook-form";
 import TextInput from "@/components/Inputs/TextInput";
 import RadioInput from "@/components/Inputs/RadioInput";
 
-export function ContactForm({title,register, ...props} : React.ComponentPropsWithoutRef<'form'> & {title?: string, register: UseFormRegister<any>}) {
+export function ContactForm({title,register, isLoading, ...props} : React.ComponentPropsWithoutRef<'form'> & {title?: string, register: UseFormRegister<any>, isLoading: boolean}) {
   return (
     <FadeIn className={clsx("lg:order-last", props.className)}>
       <form {...props}>
@@ -39,7 +39,7 @@ export function ContactForm({title,register, ...props} : React.ComponentPropsWit
             </fieldset>
           </div>
         </div>
-        <Button type="submit" className="mt-10" invert loading>
+        <Button type="submit" className="mt-10" invert loading={isLoading}>
           Envoyer la demande
         </Button>
       </form>

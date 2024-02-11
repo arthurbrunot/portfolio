@@ -11,7 +11,7 @@ import {ContactFormData} from "@/app/api/send/route";
 
 export default function Page() {
   const [isContactSectionVisible, setIsContactSectionVisible] = useState(false)
-
+  const [isLoading, setIsLoading] = useState(false)
   const {handleSubmit, register} = useForm<ContactFormData>({
     defaultValues: {
       name: "",
@@ -24,10 +24,11 @@ export default function Page() {
   })
 
   const  onSubmit: SubmitHandler<ContactFormData> = async  (data) => {
+    setIsLoading(true)
     await fetch("api/send", {
       method: "POST",
       body: JSON.stringify(data),
-    })
+    }).finally(() => setIsLoading(false))
   }
 
   return (
@@ -63,7 +64,7 @@ export default function Page() {
               action={() => setIsContactSectionVisible(false)}
             />
             <motion.div layout className="flex gap-x-8 gap-y-24">
-              <ContactForm className={"bg-white mt-0 w-full"} onSubmit={handleSubmit(onSubmit)} register={register}/>
+              <ContactForm className={"bg-white mt-0 w-full"} onSubmit={handleSubmit(onSubmit)} register={register} isLoading={isLoading}/>
             </motion.div>
           </motion.div>
         )
