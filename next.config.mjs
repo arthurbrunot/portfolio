@@ -20,7 +20,7 @@ const nextConfig = {
     if(redirection === 'true') {
       return [
         {
-          source: '/',
+          source: '/*',
           destination: '/maintenance',
           permanent: false,
         },
