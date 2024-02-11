@@ -20,8 +20,8 @@ const nextConfig = {
     if(redirection === 'true') {
       return [
         {
-          // match all paths except /maintenance
-          source: '/:path((?!maintenance).*)',
+          // match all paths except /maintenance and /api/send
+          source: '/:path((?!maintenance|api/send).*)',
           destination: '/maintenance',
           permanent: true,
         },
