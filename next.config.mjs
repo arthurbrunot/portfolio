@@ -20,9 +20,10 @@ const nextConfig = {
     if(redirection === 'true') {
       return [
         {
-          source: '/*',
+          // match all paths except /maintenance
+          source: '/:path((?!maintenance).*)',
           destination: '/maintenance',
-          permanent: false,
+          permanent: true,
         },
       ]
     } else {
