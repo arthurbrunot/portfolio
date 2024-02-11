@@ -39,7 +39,7 @@ export function ContactForm({title,register, ...props} : React.ComponentPropsWit
             </fieldset>
           </div>
         </div>
-        <Button type="submit" className="mt-10" invert>
+        <Button type="submit" className="mt-10" invert loading>
           Envoyer la demande
         </Button>
       </form>

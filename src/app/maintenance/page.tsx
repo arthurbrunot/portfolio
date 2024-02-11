@@ -49,7 +49,7 @@ export default function Page() {
       { isContactSectionVisible &&
         (
           <motion.div
-            className="md:mt-16 grid lg:grid-cols-2 max-w-7xl mx-auto gap-12 md:gap-24 px-8"
+            className="md:mt-16 grid lg:grid-cols-2 max-w-7xl mx-auto gap-12 md:gap-24 px-8 pb-12"
             initial={{opacity: 0, y: 24}}
             animate={{opacity: 1, y: 0}}
             exit={{opacity: 0, y: 24}}
