@@ -17,14 +17,16 @@ const nextConfig = {
   async redirects() {
     const redirection = process.env.NEXT_PUBLIC_MAINTENANCE_MODE
 
-    if(redirection) {
+    if(redirection === 'true') {
       return [
         {
           source: '/',
           destination: '/maintenance',
-          permanent: true,
+          permanent: false,
         },
       ]
+    } else {
+        return []
     }
   },
 }
