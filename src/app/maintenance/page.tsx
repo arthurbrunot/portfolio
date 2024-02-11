@@ -14,12 +14,12 @@ export default function Page() {
 
   const {handleSubmit, register} = useForm<ContactFormData>({
     defaultValues: {
-      name: "John Doe",
-      email: "johndoe@gmail.com",
-      company: "Test",
-      phone: "0676379184",
-      message: "My message",
-      budget: "3500+",
+      name: "",
+      email: "",
+      company: "",
+      phone: "",
+      message: "",
+      budget: "",
     }
   })
 
@@ -37,7 +37,7 @@ export default function Page() {
           <Container className={clsx("flex items-center h-full -mt-16", {
             "h-fit -mt-0": isContactSectionVisible,
           })}>
-              <Hero
+              <Content
                 isContactSectionVisible={isContactSectionVisible}
                 title={"C'est pour bientôt !"}
                 description={"Mon site est en construction, et il arrive bientôt ! Restez à l'écoute."}
@@ -55,7 +55,7 @@ export default function Page() {
             exit={{opacity: 0, y: 24}}
             transition={{duration: 0.25, ease: "easeOut"}
             }>
-            <Hero
+            <Content
               isContactSectionVisible={isContactSectionVisible}
               title={"On discute de votre projet ?"}
               description={"Je suis toujours à la recherche de nouveaux projets. Parlons ensemble du vôtre."}
@@ -72,10 +72,10 @@ export default function Page() {
   )
 }
 
-function Hero(props : HeroProps) {
+function Content(props : HeroProps) {
   return (
     <motion.div
-      className={clsx("flex max-w-2xl flex-col text-center items-center", props.className)}
+      className={clsx("flex md:max-w-full flex-col text-center items-center", props.className)}
       initial={{opacity: 0, y: 24}}
       animate={{opacity: 1, y: 0}}
       exit={{opacity: 0, y: 24}}
@@ -86,10 +86,12 @@ function Hero(props : HeroProps) {
       })}>
         {props.title}
       </h1>
-      <p className="mt-2 text-sm text-neutral-600">
+      <p className="mt-4 text-lg text-neutral-600">
         {props.description}
       </p>
-      <Button invert={!props.isContactSectionVisible} className="mt-6 w-fit" onClick={props.action}>
+      <Button invert={!props.isContactSectionVisible} className={clsx("mt-6 w-fit", {
+        "order-first !mb-4 !mt-0": props.isContactSectionVisible,
+      } )} onClick={props.action}>
         {props.isContactSectionVisible ? "Retour" : "Contactez-moi"}
       </Button>
     </motion.div>
