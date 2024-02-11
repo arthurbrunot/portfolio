@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "mail:dev": "email dev"
   },
   "browserslist": "defaults, not ie <= 11",
   "dependencies": {
@@ -14,6 +15,7 @@
     "@mdx-js/loader": "^3.0.0",
     "@mdx-js/react": "^3.0.0",
     "@next/mdx": "^14.0.4",
+    "@react-email/components": "^0.0.14",
     "@types/mdx": "^2.0.7",
     "@types/node": "^20.10.8",
     "@types/react": "^18.2.47",
@@ -30,10 +32,13 @@
     "next": "^14.0.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-email": "^2.0.0",
+    "react-hook-form": "^7.50.1",
     "recma-import-images": "0.0.3",
     "remark-gfm": "^4.0.0",
     "remark-rehype-wrap": "0.0.3",
     "remark-unwrap-images": "^4.0.0",
+    "resend": "^3.1.0",
     "shiki": "^0.11.1",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.3.3",

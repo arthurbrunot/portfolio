@@ -154,7 +154,7 @@ function Navigation() {
   )
 }
 
-function RootLayoutInner({ children }: { children: React.ReactNode }) {
+function RootLayoutInner({ children, isMaintenance }: { children: React.ReactNode, isMaintenance: boolean}) {
   let panelId = useId()
   let [expanded, setExpanded] = useState(false)
   let openRef = useRef<React.ElementRef<'button'>>(null)
@@ -178,6 +178,30 @@ function RootLayoutInner({ children }: { children: React.ReactNode }) {
       window.removeEventListener('click', onClick)
     }
   }, [])
+
+  if(isMaintenance) {
+    return (
+      <MotionConfig transition={shouldReduceMotion ? { duration: 0 } : undefined}>
+        <motion.div
+          layout
+          className="relative flex flex-auto overflow-hidden bg-white pt-14 rounded-4xl"
+        >
+          <motion.div
+            layout
+            className="relative isolate flex w-full flex-col pt-9"
+          >
+            <GridPattern
+              className="absolute inset-x-0 -top-14 -z-10 h-[1000px] w-full fill-primary/15 stroke-neutral-950/5 [mask-image:linear-gradient(to_bottom_left,white_40%,transparent_50%)]"
+              yOffset={-96}
+              interactive
+            />
+
+            <main className="w-full flex-auto">{children}</main>
+          </motion.div>
+        </motion.div>
+      </MotionConfig>
+    )
+  }
 
   return (
     <MotionConfig transition={shouldReduceMotion ? { duration: 0 } : undefined}>
@@ -283,7 +307,12 @@ export function RootLayout({ children }: { children: React.ReactNode }) {
 
   return (
     <RootLayoutContext.Provider value={{ logoHovered, setLogoHovered }}>
-      <RootLayoutInner key={pathname}>{children}</RootLayoutInner>
+      <RootLayoutInner
+        key={pathname}
+        isMaintenance={pathname === '/maintenance'}
+      >
+        {children}
+      </RootLayoutInner>
     </RootLayoutContext.Provider>
   )
 }

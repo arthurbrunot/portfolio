@@ -15,7 +15,7 @@ import { unifiedConditional } from 'unified-conditional'
 const nextConfig = {
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
   async redirects() {
-    const redirection = process.env.NEXT_PUBLIC_MAINTENANCE_MODE
+    const redirection = process.env.MAINTENANCE_MODE
 
     if(redirection === 'true') {
       return [
