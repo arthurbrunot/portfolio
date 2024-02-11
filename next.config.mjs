@@ -14,6 +14,19 @@ import { unifiedConditional } from 'unified-conditional'
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
+  async redirects() {
+    const redirection = process.env.NEXT_PUBLIC_MAINTENANCE_MODE
+
+    if(redirection) {
+      return [
+        {
+          source: '/',
+          destination: '/maintenance',
+          permanent: true,
+        },
+      ]
+    }
+  },
 }
 
 function remarkMDXLayout(source, metaName) {

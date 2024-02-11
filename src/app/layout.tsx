@@ -1,4 +1,4 @@
-import { type Metadata } from 'next'
+import {type Metadata, Viewport} from 'next'
 import { Inter } from 'next/font/google'
 import { RootLayout } from '@/components/RootLayout'
 import { SpeedInsights } from "@vercel/speed-insights/next"
@@ -9,8 +9,8 @@ import {Analytics} from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   title: {
-    template: '%s - Studio',
-    default: 'Studio - Award winning developer studio based in Denmark',
+    template: '%s - Arthur BRUNOT',
+    default: 'Arthur BRUNOT - Créateur de solutions digitales',
   },
 }
 
