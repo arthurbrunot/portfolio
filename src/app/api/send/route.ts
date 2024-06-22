@@ -11,7 +11,7 @@ export async function POST(req: NextRequest) {
   try {
     // @ts-ignore
     const mail = await resend.emails.send({
-      from: 'contact@arthurbrunot.fr',
+      from: 'contact@aknown.dev',
       to: ['arthur.brunot.pro@gmail.com'],
       subject: 'Nouveau contact depuis le site !',
       react: EmailTemplate(data),
